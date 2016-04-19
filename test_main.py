@@ -26,6 +26,7 @@ from email.mime.application import MIMEApplication
 import urllib2
 from SogouUtils import SogouUtils
 from ShopTestCase import Shop_Result_Test
+from ShopTestCase import Loader
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
@@ -79,7 +80,7 @@ class Result_Test_CH(Shop_Result_Test):
         self.cap_dir = 'capture-ch-' + time_stamp
 
 def Pic_Result_Test_Handler(bro_type='ff'):
-    suite = unittest.TestLoader().loadTestsFromTestCase(eval('Result_Test_' + bro_type.upper()))
+    suite = Loader().loadTestsFromTestCase(eval('Result_Test_' + bro_type.upper()))
     # 创建报告页
     report = config['resfile'] + time_stamp + '-' + bro_type + '.html'
     fp = open(report, 'w')
