@@ -50,10 +50,10 @@ class Shop_Result_Test(unittest.TestCase):
 
     @classmethod
     def collection_test_search(cls):
-        words = []
+        words = ['1','2','3']
         config = SogouUtils.load_config("test_shop.cfg")
         # file = open("new_sogou_cate.txt")
-        file = open(config['casefile'])
+        #file = open(config['casefile'])
         for i in file.readlines():
             words.append(i)  
         return words
@@ -68,7 +68,7 @@ class Shop_Result_Test(unittest.TestCase):
             self.driver.get(self.base_url)         
             elem = self.driver.find_element_by_id("query")
             stb = self.driver.find_element_by_id('stb')
-            elem.send_keys(x.decode('utf-8').strip('\n'))
+            #elem.send_keys(x.decode('utf-8').strip('\n'))
             stb.click()            
             time.sleep(1)
         return test_body
