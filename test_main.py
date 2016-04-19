@@ -25,7 +25,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 import urllib2
 from SogouUtils import SogouUtils
-from PicTestCase import Pic_Result_Test
+from ShopTestCase import Shop_Result_Test
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
@@ -36,7 +36,7 @@ words = []
 time_stamp = time.strftime("%Y-%m-%d-%H-%M-%S")
 
 #修改点1：这里的Pic_Result_Test根据自己case的类名设置
-class Result_Test_FF(Pic_Result_Test): 
+class Result_Test_FF(Shop_Result_Test): 
     def setUp(self):
         self.driver = webdriver.Firefox()
         #self.driver = webdriver.Remote(command_executor="http://"+config['hub_addr']+"/wd/hub",
@@ -49,7 +49,7 @@ class Result_Test_FF(Pic_Result_Test):
 
 
 #修改点2：这里的Pic_Result_Test根据自己case的类名设置
-class Result_Test_IE(Pic_Result_Test):
+class Result_Test_IE(Shop_Result_Test):
     def setUp(self):
         '''
         iedriver = config['iedriver'].strip()
@@ -65,7 +65,7 @@ class Result_Test_IE(Pic_Result_Test):
         self.cap_dir = 'capture-ie-' + time_stamp
 
 #修改点3：这里的Pic_Result_Test根据自己case的类名设置
-class Result_Test_CH(Pic_Result_Test):
+class Result_Test_CH(Shop_Result_Test):
     def setUp(self):
         #chromedriver = config['chromedriver'].strip()
         #os.environ["webdriver.chrome.driver"] = chromedriver
