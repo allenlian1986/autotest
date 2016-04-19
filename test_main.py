@@ -121,8 +121,6 @@ def start_task():
         time.sleep(5)
         SogouUtils.zip_capture('capture-' + bro_dict[bro_type] + '-' + time_stamp)
 
-    if config['sendmail'] == '1':
-        SogouUtils.send_mail(bro_dict[bro_type], config, time_stamp)
 
     print u'执行完毕'
 if __name__ == '__main__':
